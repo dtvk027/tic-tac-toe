@@ -474,6 +474,7 @@ function resetGame() {
         "",
         "",
         "",
+        "",
         ""
     ];
 
