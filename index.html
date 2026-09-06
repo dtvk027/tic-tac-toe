@@ -1,22 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic Tac Toe Game</title>
+
+    <title>TactiXO | AI Tic Tac Toe</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <main>
-        <h1>Tic Tac Toe</h1>
+    <!-- =========================
+         DASHBOARD
+    ========================== -->
+
+    <section id="dashboard" class="dashboard">
+
+        <div class="dashboard-card">
+
+            <div class="game-icon">
+                🎮
+            </div>
+
+            <h1>TactiXO</h1>
+
+            <p class="subtitle">
+                Classic strategy. Smarter opponent.
+            </p>
+
+
+            <div class="mode-buttons">
+
+                <button id="playerModeButton" class="mode-button">
+
+                    <span class="button-icon">
+                        👥
+                    </span>
+
+                    <span class="button-text">
+                        <strong>Play with Player</strong>
+                        <small>Challenge a friend</small>
+                    </span>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <button id="aiModeButton" class="mode-button ai-mode">
+
+                    <span class="button-icon">
+                        🤖
+                    </span>
+
+                    <span class="button-text">
+                        <strong>Play with AI</strong>
+                        <small>Challenge the smart computer</small>
+                    </span>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <div class="dashboard-info">
+
+                <div>
+                    <span>⚡</span>
+                    Fast
+                </div>
+
+                <div>
+                    <span>🧠</span>
+                    Minimax AI
+                </div>
+
+                <div>
+                    <span>🏆</span>
+                    Competitive
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         GAME SCREEN
+    ========================== -->
+
+    <section id="gameScreen" class="game-screen">
+
+        <div class="game-header">
+
+            <button id="backButton" class="back-button">
+                ← Dashboard
+            </button>
+
+            <div class="header-title">
+                <h1>TactiXO</h1>
+                <span>AI Tic Tac Toe</span>
+            </div>
+
+            <button id="headerResetButton" class="header-reset">
+                ↻ Reset
+            </button>
+
+        </div>
+
+
+        <!-- Game Mode -->
+
+        <p id="modeText" class="mode-text">
+            Player vs Player
+        </p>
+
+
+        <!-- Turn -->
+
+        <div class="turn-display">
+            <span id="turnText">
+                ⭕ Player O's Turn
+            </span>
+        </div>
+
+
+        <!-- Board -->
 
         <div class="container">
-            <div class="game">
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
+
+            <div id="board" class="game">
 
                 <button class="box"></button>
                 <button class="box"></button>
@@ -25,21 +148,65 @@
                 <button class="box"></button>
                 <button class="box"></button>
                 <button class="box"></button>
+
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+
             </div>
+
         </div>
 
-        <button id="resetButton">Reset Game</button>
-    </main>
 
-    <!-- Winner Popup -->
-    <div class="popup" id="winnerPopup">
+        <!-- Bottom Controls -->
+
+        <button id="resetButton" class="reset-button">
+            Reset Game
+        </button>
+
+    </section>
+
+
+    <!-- =========================
+         RESULT POPUP
+    ========================== -->
+
+    <div id="winnerPopup" class="popup">
+
         <div class="popup-content">
-            <h2 id="winnerMessage">O is the Winner! 🎉</h2>
-            <button id="newGameButton">New Game</button>
+
+            <div id="resultIcon" class="result-icon">
+                🏆
+            </div>
+
+            <h2 id="winnerMessage">
+                O Wins!
+            </h2>
+
+            <p id="resultDescription">
+                Congratulations!
+            </p>
+
+
+            <div class="popup-buttons">
+
+                <button id="newGameButton" class="new-game-button">
+                    🎮 New Game
+                </button>
+
+                <button id="popupDashboardButton" class="dashboard-button">
+                    ← Dashboard
+                </button>
+
+            </div>
+
         </div>
+
     </div>
+
 
     <script src="app.js"></script>
 
 </body>
+
 </html>

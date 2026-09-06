@@ -1,3 +1,7 @@
+/* =========================
+   GLOBAL
+========================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -5,148 +9,654 @@
 }
 
 body {
-    background-color: #548687;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #182b2d 0%,
+            #0d1516 35%,
+            #080909 70%,
+            #050505 100%
+        );
+
+    color: #ffffff;
+}
+
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.dashboard-card {
+    width: 460px;
+
+    padding: 45px 35px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(35, 55, 57, 0.9),
+            rgba(15, 18, 19, 0.95)
+        );
+
+    border: 1px solid rgba(84, 134, 135, 0.35);
+
+    border-radius: 26px;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.65),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+    backdrop-filter: blur(15px);
+}
+
+
+/* Game Icon */
+
+.game-icon {
+    width: 80px;
+    height: 80px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2.7rem;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1c3638,
+            #0c1516
+        );
+
+    border: 1px solid rgba(84, 134, 135, 0.4);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+
+.dashboard-card h1 {
+    font-size: 3rem;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #9baaaa;
+
+    font-size: 1rem;
+
+    margin-bottom: 32px;
+}
+
+
+/* =========================
+   MODE BUTTONS
+========================= */
+
+.mode-buttons {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+.mode-button {
+    width: 100%;
+
+    padding: 17px 18px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    text-align: left;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1a2223,
+            #111516
+        );
+
+    color: white;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.mode-button:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(84, 134, 135, 0.7);
+
+    background:
+        linear-gradient(
+            135deg,
+            #203637,
+            #13191a
+        );
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.button-icon {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-shrink: 0;
+
+    font-size: 1.7rem;
+
+    border-radius: 13px;
+
+    background: #253b3c;
+}
+
+.button-text {
+    flex: 1;
+}
+
+.mode-button strong {
+    display: block;
+
+    font-size: 1rem;
+
+    margin-bottom: 5px;
+}
+
+.mode-button small {
+    display: block;
+
+    color: #89999a;
+
+    font-size: 0.82rem;
+}
+
+.arrow {
+    font-size: 1.3rem;
+
+    color: #6fa4a5;
+
+    transition: transform 0.2s ease;
+}
+
+.mode-button:hover .arrow {
+    transform: translateX(4px);
+}
+
+
+/* =========================
+   DASHBOARD INFO
+========================= */
+
+.dashboard-info {
+    margin-top: 30px;
+
+    padding-top: 25px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+
+    color: #879697;
+
+    font-size: 0.75rem;
+}
+
+.dashboard-info div {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 6px;
+}
+
+.dashboard-info span {
+    font-size: 1.15rem;
+}
+
+
+/* =========================
+   GAME SCREEN
+========================= */
+
+.game-screen {
+    min-height: 100vh;
+
+    display: none;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    padding: 25px;
+}
+
+
+/* =========================
+   GAME HEADER
+========================= */
+
+.game-header {
+    width: 100%;
+    max-width: 650px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.header-title {
     text-align: center;
 }
 
-h1 {
-    margin-top: 30px;
-    font-size: 3rem;
-    color: white;
+.header-title h1 {
+    font-size: 2rem;
+
+    margin-bottom: 3px;
 }
 
+.header-title span {
+    color: #7e9091;
+
+    font-size: 0.7rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+}
+
+.back-button,
+.header-reset {
+    padding: 10px 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 10px;
+
+    background: #151b1c;
+
+    color: #d8e0e0;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.back-button:hover,
+.header-reset:hover {
+    background: #203536;
+
+    border-color: rgba(84, 134, 135, 0.5);
+}
+
+
+/* =========================
+   MODE
+========================= */
+
+.mode-text {
+    margin-top: 12px;
+
+    color: #788889;
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================
+   TURN
+========================= */
+
+.turn-display {
+    margin-top: 20px;
+
+    padding: 10px 25px;
+
+    border-radius: 30px;
+
+    background: #131a1b;
+
+    border: 1px solid rgba(84, 134, 135, 0.25);
+
+    color: #d9e4e4;
+
+    font-size: 0.95rem;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================
+   BOARD
+========================= */
+
 .container {
-    height: 70vh;
     display: flex;
+
     justify-content: center;
     align-items: center;
+
+    margin: 30px 0;
 }
 
 .game {
-    height: 60vmin;
-    width: 60vmin;
+    width: min(88vw, 430px);
 
-    display: flex;
-    flex-wrap: wrap;
+    height: min(88vw, 430px);
 
-    justify-content: center;
-    align-items: center;
+    display: grid;
 
-    gap: 1vmin;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 10px;
 }
 
 .box {
-    height: 18vmin;
-    width: 18vmin;
+    border: 1px solid rgba(255, 255, 255, 0.06);
 
-    border-radius: 1rem;
-    border: none;
+    border-radius: 17px;
 
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
+    background:
+        linear-gradient(
+            145deg,
+            #202829,
+            #141919
+        );
 
-    font-size: 8vmin;
-    color: #b00404;
+    font-size: clamp(3rem, 10vw, 5rem);
 
-    background-color: #fff;
+    font-weight: bold;
 
-    cursor: pointer;
-}
-
-.box:disabled {
-    cursor: not-allowed;
-}
-
-#resetButton {
-    padding: 1rem 2rem;
-
-    font-size: 1.25rem;
-
-    background-color: #010000;
-    color: #fff;
-
-    border-radius: 1rem;
-    border: none;
+    color: #ffffff;
 
     cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+    transition:
+        transform 0.15s ease,
+        background 0.15s ease,
+        border-color 0.15s ease;
 }
 
-#resetButton:hover {
-    background-color: #333;
+.box:hover {
+    transform: scale(1.025);
+
+    background:
+        linear-gradient(
+            145deg,
+            #263334,
+            #182021
+        );
+
+    border-color: rgba(84, 134, 135, 0.45);
+}
+
+.box.x {
+    color: #75b9ba;
+
+    text-shadow:
+        0 0 20px rgba(117, 185, 186, 0.3);
+}
+
+.box.o {
+    color: #ffffff;
+
+    text-shadow:
+        0 0 20px rgba(255, 255, 255, 0.2);
 }
 
 
-/* -------------------------
-   WINNER POPUP
-------------------------- */
+/* =========================
+   RESET
+========================= */
+
+.reset-button {
+    padding: 13px 28px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 12px;
+
+    background: #151b1c;
+
+    color: #e0e6e6;
+
+    font-size: 0.9rem;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.reset-button:hover {
+    background: #203536;
+
+    border-color: rgba(84, 134, 135, 0.5);
+}
+
+
+/* =========================
+   POPUP
+========================= */
 
 .popup {
     position: fixed;
 
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-
-    background-color: rgba(0, 0, 0, 0.6);
+    inset: 0;
 
     display: none;
 
     justify-content: center;
     align-items: center;
+
+    padding: 20px;
+
+    background: rgba(0, 0, 0, 0.78);
+
+    backdrop-filter: blur(8px);
+
+    z-index: 1000;
 }
 
 .popup-content {
-    background-color: white;
+    width: min(90vw, 400px);
 
-    padding: 40px;
+    padding: 40px 30px;
 
-    border-radius: 20px;
+    text-align: center;
 
-    width: 350px;
+    background:
+        linear-gradient(
+            145deg,
+            #202a2b,
+            #111516
+        );
 
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    color: white;
+
+    border: 1px solid rgba(84, 134, 135, 0.35);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.7);
 
     animation: popupAnimation 0.3s ease;
 }
 
-.popup-content h2 {
-    font-size: 2rem;
-    margin-bottom: 25px;
-    color: #548687;
+.result-icon {
+    font-size: 3.5rem;
+
+    margin-bottom: 10px;
 }
 
-#newGameButton {
-    padding: 12px 25px;
+.popup-content h2 {
+    font-size: 2rem;
 
-    font-size: 1.2rem;
+    color: #ffffff;
 
-    background-color: #548687;
-    color: white;
+    margin-bottom: 10px;
+}
+
+.popup-content p {
+    color: #8d9b9c;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   POPUP BUTTONS
+========================= */
+
+.popup-buttons {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.new-game-button,
+.dashboard-button {
+    padding: 13px;
 
     border: none;
 
     border-radius: 10px;
 
+    font-size: 0.95rem;
+
     cursor: pointer;
+
+    transition: 0.2s;
 }
 
-#newGameButton:hover {
-    background-color: #3e6869;
+.new-game-button {
+    background: #548687;
+
+    color: white;
+}
+
+.new-game-button:hover {
+    background: #6ba1a2;
+
+    transform: translateY(-2px);
+}
+
+.dashboard-button {
+    background: #22292a;
+
+    color: #cbd3d3;
+}
+
+.dashboard-button:hover {
+    background: #2c3637;
 }
 
 
-/* Popup animation */
+/* =========================
+   ANIMATION
+========================= */
 
 @keyframes popupAnimation {
+
     from {
-        transform: scale(0.5);
+        transform: scale(0.75);
+
         opacity: 0;
     }
 
     to {
         transform: scale(1);
+
         opacity: 1;
     }
 }
 
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+    .dashboard-card {
+        padding: 35px 20px;
+    }
+
+    .dashboard-card h1 {
+        font-size: 2.5rem;
+    }
+
+    .game-header h1 {
+        font-size: 1.7rem;
+    }
+
+    .back-button,
+    .header-reset {
+        padding: 8px 10px;
+
+        font-size: 0.75rem;
+    }
+
+    .game {
+        gap: 8px;
+    }
+
+    .box {
+        border-radius: 13px;
+    }
+}
